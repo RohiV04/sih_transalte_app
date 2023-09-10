@@ -27,6 +27,7 @@ List any prerequisites or system requirements needed to run the project. Include
 - Python 3.x
 - Azure Form Recognizer API Key
 - Azure Translation API Key
+- Add .env file
 - (Add more prerequisites as needed)
 
 ## Getting Started
@@ -41,4 +42,5 @@ https://github.com/RohiV04/sih_transalte_app.git
 cd sih_transalte_app
 
 pip install -r requirements.txt
+python app.py
 
