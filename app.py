@@ -3,6 +3,8 @@ from azure.ai.formrecognizer import DocumentAnalysisClient
 import os
 import requests
 from decouple import config
+
+
 def extract_layout_and_translate(input_file_path: str, endpoint: str, key: str, translate_api_key: str):
     try:
         document_analysis_client = DocumentAnalysisClient(
@@ -23,7 +25,7 @@ def extract_layout_and_translate(input_file_path: str, endpoint: str, key: str, 
             translation_payload = {
                 "text": content,
                 "source_language": "en",
-	            "target_language": "bn", # Replace with your desired target language code
+                "target_language": "bn",  # Replace with your desired target language code
             }
             translation_headers = {
                 "content-type": 'application/x-www-form-urlencoded',
@@ -31,19 +33,22 @@ def extract_layout_and_translate(input_file_path: str, endpoint: str, key: str, 
                 "X-RapidAPI-Key": translate_api_key,
                 "X-RapidAPI-Host": 'text-translator2.p.rapidapi.com'
             }
-            
-            translation_response = requests.post(translation_url, data=translation_payload, headers=translation_headers)
-            
+
+            translation_response = requests.post(
+                translation_url, data=translation_payload, headers=translation_headers)
+
             if translation_response.status_code == 200:
-                translated_content = translation_response.json()['data']['translatedText']
+                translated_content = translation_response.json()[
+                    'data']['translatedText']
                 return translated_content
             else:
                 return "Translation failed"
 
         return extracted_data.to_dict()
-    
+
     except Exception as e:
         return str(e)
+
 
 # Your Azure Form Recognizer credentials
 endpoint = "https://rohi-123.cognitiveservices.azure.com/"
@@ -57,5 +62,6 @@ target_language = "fr"  # Replace with your desired target language code
 input_file_path = "./Sih Solution.pdf"
 
 # Call the function and print the translated content
-translated_content = extract_layout_and_translate(input_file_path, endpoint, form_recognizer_key, translate_api_key)
+translated_content = extract_layout_and_translate(
+    input_file_path, endpoint, form_recognizer_key, translate_api_key)
 print("Translated content:", translated_content)
