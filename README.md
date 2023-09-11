@@ -38,9 +38,21 @@ Explain the steps to set up the project environment and install the required dep
 
 ```bash
 https://github.com/RohiV04/sih_transalte_app.git
-
+```
+### 2. Navigate 
+```bash
 cd sih_transalte_app
+cd app
+```
 
+### 3. Install Requirements
+```bash
 pip install -r requirements.txt
-python app.py
+```
+### 4.Add .env File
 
+### 5.Run the app
+
+```bash
+python main.py
+```
