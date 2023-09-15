@@ -15,9 +15,9 @@ def summarize_text(input_text:str):
         response = requests.post(url, json=payload, headers=headers)
 
         if response.status_code == 200:
-            return response.json()['result']
+            return {"data":response.json()['result'], "status":True}
         else:
             return "Summarization failed."
 
     except Exception as e:
-        return str(e)
+        return {"err":str(e), "status":False}
