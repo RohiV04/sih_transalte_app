@@ -20,9 +20,9 @@ def translate_text(input_text:str, target_language:str):
             translation_url, data=translation_payload, headers=translation_headers)
 
         if translation_response.status_code == 200:
-            return translation_response.json()['data']['translatedText']
+            return {"data":translation_response.json()['data']['translatedText'],"status":True}
         else:
             return "Translation failed."
 
     except Exception as e:
-        return str(e)
+        return {"err":str(e), "status":False}
