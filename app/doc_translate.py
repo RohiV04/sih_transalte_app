@@ -5,9 +5,9 @@ key =  config('DOC_TRANSLATE_KEY')
 path = 'translator/text/batch/v1.1/batches'
 constructed_url = endpoint + path
 
-sourceSASUrl = config('SOURCE_SAS_URL')
+sourceSASUrl = config('SOURCE_SASS_URL')
 
-targetSASUrl = config('TARGET_SAS_URL')
+targetSASUrl = config('TARGET_SASS_URL')
 
 body= {
     "inputs": [
