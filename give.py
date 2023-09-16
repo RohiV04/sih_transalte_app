@@ -31,7 +31,7 @@ def summarize_text(input_text):
         payload = {"text": input_text}
         headers = {
             "content-type": "application/json",
-            "X-RapidAPI-Key": "08c766dfb2msh6d00b8d4358723ep1a2161jsn420366549ee8",
+            "X-RapidAPI-Key": config('OPENAI_SUMMARIZE_API_KEY'),
             "X-RapidAPI-Host": "open-ai21.p.rapidapi.com",
         }
 

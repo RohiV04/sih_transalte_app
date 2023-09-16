@@ -18,7 +18,7 @@ def extract_text_from_document(input_file_path:str):
 
 
         if extracted_data:
-            return {"data":extracted_data.to_dict()['content'], "status":True}
+            return {"data":extracted_data.to_dict(), "status":True}
         else:
             return "No content extracted from the document."
 
