@@ -2,7 +2,7 @@ from formrecogniser import extract_text_from_document
 from summarize import summarize_text
 from translate import translate_text
 
-input_file_path = "../test-2.jpeg"
+input_file_path = "../test/test-1.pdf"
 target_language = "te"
 extracted_text = extract_text_from_document(
     input_file_path)
