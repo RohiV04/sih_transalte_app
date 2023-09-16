@@ -37,7 +37,7 @@ Explain the steps to set up the project environment and install the required dep
 ### 1. Clone the Repository
 
 ```bash
-https://github.com/RohiV04/sih_transalte_app.git
+git clone https://github.com/RohiV04/sih_transalte_app.git
 ```
 ### 2. Navigate 
 ```bash
